@@ -1,0 +1,307 @@
+SELECT * 
+FROM (
+    SELECT  
+        gum.[Group ID],
+        gum.[User ID],
+        u.[ID],
+        u.[Computed Name Abbreviated],
+        u.[Position],
+        u.[Department],
+        LEFT(u.[Department], CHARINDEX(';', u.[Department])) AS "True Department",
+        RIGHT(u.[Department], LEN(u.[Department]) - CHARINDEX(';', u.[Department])) AS "True School",
+        u.[Proprietary ID],
+        u.[Username],
+        u.[Is Current Staff],
+        u.[Is Academic],
+        u.[Arrive Date],
+        u.[Leave Date],
+        u.[Email],
+        u.[Dept0],
+        u.[DeptClass0],
+        u.[DeptGroup0],
+        u.[PositionType0],
+        u.[PositionCat0],
+        u.[Dept1],
+        u.[DeptClass1],
+        u.[DeptGroup1],
+        u.[PositionType1],
+        u.[PositionCat1],
+        u.[Dept2],
+        u.[DeptClass2],
+        u.[DeptGroup2],
+        u.[PositionType2],
+        u.[PositionCat2],
+        u.[Dept3],
+        u.[DeptClass3],
+        u.[DeptGroup3],
+        u.[PositionType3],
+        u.[PositionCat3],
+        u.[Dept4],
+        u.[DeptClass4],
+        u.[DeptGroup4],
+        u.[PositionType4],
+        u.[PositionCat4],
+        u.[Dept5],
+        u.[DeptClass5],
+        u.[DeptGroup5],
+        u.[PositionType5],
+        u.[PositionCat5],
+        u.[Dept6],
+        u.[DeptClass6],
+        u.[DeptGroup6],
+        u.[PositionType6],
+        u.[PositionCat6],
+        u.[Dept7],
+        u.[DeptClass7],
+        u.[DeptGroup7],
+        u.[PositionType7],
+        u.[PositionCat7],
+        u.[Dept8],
+        u.[DeptClass8],
+        u.[DeptGroup8],
+        u.[PositionType8],
+        u.[PositionCat8],
+        u.[Dept9],
+        u.[DeptClass9],
+        u.[DeptGroup9],
+        u.[PositionType9],
+        u.[PositionCat9],
+        u.[generic-00],
+        u.[generic-01],
+        u.[generic-02],
+        u.[generic-03],
+        u.[generic-04],
+        u.[generic-05],
+        u.[generic-06],
+        u.[generic-07],
+        u.[generic-08],
+        u.[generic-09],
+        u.[generic-10],
+        u.[generic-11],
+        u.[generic-12],
+        u.[generic-13],
+        u.[generic-14],
+        u.[generic-15],
+        u.[generic-16],
+        u.[generic-17],
+        u.[generic-18],
+        u.[generic-19],
+        u.[generic-20],
+        u.[generic-21],
+        u.[generic-22],
+        u.[generic-23],
+        u.[generic-24],
+        u.[generic-25],
+        u.[generic-26],
+        u.[generic-27],
+        u.[generic-28],
+        u.[generic-29],
+        u.[generic-30],
+        u.[generic-31],
+        u.[generic-32],
+        u.[generic-33],
+        u.[generic-34],
+        u.[generic-35],
+        u.[generic-36],
+        u.[generic-37],
+        u.[generic-38],
+        u.[generic-39],
+        u.[generic-40],
+        u.[generic-41],
+        u.[generic-42],
+        u.[generic-43],
+        u.[generic-44],
+        u.[generic-45],
+        u.[generic-46],
+        u.[generic-47],
+        u.[generic-48],
+        u.[generic-49],
+        gum.[User ID],
+        gum.[Group ID]
+    FROM [Group] g
+    LEFT JOIN [Group User Membership] gum ON g.[ID] = gum.[Group ID]
+    LEFT JOIN [User] u ON gum.[User ID] = u.[ID]
+    WHERE g.[id] = 1
+    GROUP BY u.[ID],
+             [Computed Name Abbreviated],
+             [Position],
+             u.[Department],
+             u.[Proprietary ID],
+             u.[Username],
+             u.[Is Current Staff],
+             u.[Is Academic],
+             u.[Arrive Date],
+             u.[Leave Date],
+             u.[Email],
+             u.[Dept0],
+             u.[DeptClass0],
+             u.[DeptGroup0],
+             u.[PositionType0],
+             u.[PositionCat0],
+             u.[Dept1],
+             u.[DeptClass1],
+             u.[DeptGroup1],
+             u.[PositionType1],
+             u.[PositionCat1],
+             u.[Dept2],
+             u.[DeptClass2],
+             u.[DeptGroup2],
+             u.[PositionType2],
+             u.[PositionCat2],
+             u.[Dept3],
+             u.[DeptClass3],
+             u.[DeptGroup3],
+             u.[PositionType3],
+             u.[PositionCat3],
+             u.[Dept4],
+             u.[DeptClass4],
+             u.[DeptGroup4],
+             u.[PositionType4],
+             u.[PositionCat4],
+             u.[Dept5],
+             u.[DeptClass5],
+             u.[DeptGroup5],
+             u.[PositionType5],
+             u.[PositionCat5],
+             u.[Dept6],
+             u.[DeptClass6],
+             u.[DeptGroup6],
+             u.[PositionType6],
+             u.[PositionCat6],
+             u.[Dept7],
+             u.[DeptClass7],
+             u.[DeptGroup7],
+             u.[PositionType7],
+             u.[PositionCat7],
+             u.[Dept8],
+             u.[DeptClass8],
+             u.[DeptGroup8],
+             u.[PositionType8],
+             u.[PositionCat8],
+             u.[Dept9],
+             u.[DeptClass9],
+             u.[DeptGroup9],
+             u.[PositionType9],
+             u.[PositionCat9],
+             u.[generic-00],
+             u.[generic-01],
+             u.[generic-02],
+             u.[generic-03],
+             u.[generic-04],
+             u.[generic-05],
+             u.[generic-06],
+             u.[generic-07],
+             u.[generic-08],
+             u.[generic-09],
+             u.[generic-10],
+             u.[generic-11],
+             u.[generic-12],
+             u.[generic-13],
+             u.[generic-14],
+             u.[generic-15],
+             u.[generic-16],
+             u.[generic-17],
+             u.[generic-18],
+             u.[generic-19],
+             u.[generic-20],
+             u.[generic-21],
+             u.[generic-22],
+             u.[generic-23],
+             u.[generic-24],
+             u.[generic-25],
+             u.[generic-26],
+             u.[generic-27],
+             u.[generic-28],
+             u.[generic-29],
+             u.[generic-30],
+             u.[generic-31],
+             u.[generic-32],
+             u.[generic-33],
+             u.[generic-34],
+             u.[generic-35],
+             u.[generic-36],
+             u.[generic-37],
+             u.[generic-38],
+             u.[generic-39],
+             u.[generic-40],
+             u.[generic-41],
+             u.[generic-42],
+             u.[generic-43],
+             u.[generic-44],
+             u.[generic-45],
+             u.[generic-46],
+             u.[generic-47],
+             u.[generic-48],
+             u.[generic-49],
+             gum.[User ID],
+             gum.[Group ID]
+) AS grouptable
+
+LEFT JOIN (
+    SELECT  
+        [User ID],
+        [8] AS 'ClaimedWoS',
+        [9] AS 'ClaimedORCID',
+        [10] AS 'ClaimedScopus',
+        [17] AS 'ClaimedEmail'
+    FROM (
+        SELECT 
+            [User ID],
+            [Is Claimed],
+            [Identifier Scheme ID],
+            STUFF(
+                (
+                    SELECT ';' + [Identifier Value] 
+                    FROM [User Identifier]
+                    WHERE [User ID] = a.[User ID] 
+                    AND [Is Claimed] = 1 
+                    AND [Identifier Scheme ID] = a.[Identifier Scheme ID]  
+                    FOR XML PATH ('')
+                ), 1, 1, ''
+            ) AS Person_Claimed_ID_String
+        FROM [User Identifier] AS a
+        WHERE a.[Is Claimed] = 1 
+        GROUP BY [User ID],
+                 [Is Claimed],
+                 [Identifier Scheme ID]
+    ) AS person_claimed_table
+    PIVOT (
+        MAX([Person_Claimed_ID_String]) 
+        FOR [Identifier Scheme ID] IN ([8], [9], [10], [17])
+    ) AS pivot_claimedtable
+) AS pivot_claimedtable_2 ON grouptable.[ID] = pivot_claimedtable_2.[User ID]
+
+LEFT JOIN (
+    SELECT  
+        [User ID],
+        [8] AS 'PendingWoS',
+        [9] AS 'PendingORCID',
+        [10] AS 'PendingScopus',
+        [17] AS 'PendingEmail',
+        [23] AS 'PendingSSRN'
+    FROM (
+        SELECT 
+            [User ID],
+            [Is Pending],
+            [Identifier Scheme ID],
+            STUFF(
+                (
+                    SELECT ';' + [Identifier Value] 
+                    FROM [User Identifier]
+                    WHERE [User ID] = a.[User ID] 
+                    AND [Is Pending] = 1 
+                    AND [Identifier Scheme ID] = a.[Identifier Scheme ID]  
+                    FOR XML PATH ('')
+                ), 1, 1, ''
+            ) AS Person_Pending_ID_String
+        FROM [User Identifier] AS a
+        WHERE a.[Is Pending] = 1 
+        GROUP BY [User ID],
+                 [Is Pending],
+                 [Identifier Scheme ID]
+    ) AS person_pending_table
+    PIVOT (
+        MAX([Person_Pending_ID_String]) 
+        FOR [Identifier Scheme ID] IN ([8], [9], [10], [17], [23])
+    ) AS pivot_pendingtable
+) AS pivot_pendingtable_2 ON grouptable.[ID] = pivot_pendingtable_2.[User ID]
