@@ -1,7 +1,9 @@
-#Ignore these files 
+#Ignore these files and folders
 config.py
 /output
 /data
+/archive
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
